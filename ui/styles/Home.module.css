@@ -26,7 +26,7 @@
 	width: 520px;
 	height: 145px;
 	position: absolute;
-	left: 200px;
+	left: 190px;
 	top: 560px;
 }
 
@@ -187,10 +187,10 @@
 	background-image: url("../images/connectBtn1.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 160px;
-	height: 73px;
+	width: 180px;
+	height: 60px;
 	position: absolute;
-	left: 380px;
+	left: 360px;
 	top: 450px;
 }
 
@@ -199,10 +199,10 @@
 	background-image: url("../images/connectBtn2.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 160px;
-	height: 73px;
+	width: 180px;
+	height: 60px;
 	position: absolute;
-	left: 380px;
+	left: 360px;
 	top: 450px;
 }
 
@@ -211,10 +211,10 @@
 	background-image: url("../images/connectBtn3.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 160px;
-	height: 73px;
+	width: 180px;
+	height: 60px;
 	position: absolute;
-	left: 380px;
+	left: 360px;
 	top: 450px;
 }
 
@@ -223,10 +223,10 @@
 	background-image: url("../images/loadingBtn.gif");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 160px;
-	height: 73px;
+	width: 180px;
+	height: 60px;
 	position: absolute;
-	left: 380px;
+	left: 360px;
 	top: 450px;
 }
 
@@ -435,10 +435,10 @@
 	background-image: url("../images/sendBtn1.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 160px;
-	height: 73px;
+	width: 180px;
+	height: 60px;
 	position: absolute;
-	left: 250px;
+	left: 230px;
 	top: 400px;
 }
 
@@ -447,10 +447,10 @@
 	background-image: url("../images/sendBtn2.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 160px;
-	height: 73px;
+	width: 180px;
+	height: 60px;
 	position: absolute;
-	left: 250px;
+	left: 230px;
 	top: 400px;
 }
 
@@ -459,10 +459,10 @@
 	background-image: url("../images/sendBtn3.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 160px;
-	height: 73px;
+	width: 180px;
+	height: 60px;
 	position: absolute;
-	left: 250px;
+	left: 230px;
 	top: 400px;
 }
 
@@ -471,10 +471,10 @@
 	background-image: url("../images/sendBtn3.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 160px;
-	height: 73px;
+	width: 180px;
+	height: 60px;
 	position: absolute;
-	left: 250px;
+	left: 230px;
 	top: 400px;
 }
 
@@ -483,10 +483,10 @@
 	background-image: url("../images/getBtn1.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 160px;
-	height: 73px;
+	width: 180px;
+	height: 60px;
 	position: absolute;
-	left: 510px;
+	left: 500px;
 	top: 400px;
 }
 
@@ -495,10 +495,10 @@
 	background-image: url("../images/getBtn2.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 160px;
-	height: 73px;
+	width: 180px;
+	height: 60px;
 	position: absolute;
-	left: 510px;
+	left: 500px;
 	top: 400px;
 }
 
@@ -507,10 +507,10 @@
 	background-image: url("../images/getBtn3.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 160px;
-	height: 73px;
+	width: 180px;
+	height: 60px;
 	position: absolute;
-	left: 510px;
+	left: 500px;
 	top: 400px;
 }
 
@@ -519,10 +519,10 @@
 	background-image: url("../images/getBtn3.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 160px;
-	height: 73px;
+	width: 180px;
+	height: 60px;
 	position: absolute;
-	left: 510px;
+	left: 500px;
 	top: 400px;
 }
 
@@ -601,8 +601,8 @@
 	margin-left: auto;
 	margin-right: auto;
 	opacity: 0.5;
-	-webkit-transform: scale(2);
-    transform: scale(2); /* you can change the value also */
+	-webkit-transform: scale(5);
+    transform: scale(5); /* you can change the value also */
    -webkit-transform-origin: center;
     transform-origin: center;
 }
@@ -723,7 +723,7 @@
 	width: 90px;
 	height: 70px;
 	position: absolute;
-	left: 280px;
+	left: 250px;
 	top: 600px;
 }
 
@@ -735,7 +735,7 @@
 	width: 90px;
 	height: 70px;
 	position: absolute;
-	left: 380px;
+	left: 350px;
 	top: 600px;
 }
 
@@ -747,7 +747,7 @@
 	width: 90px;
 	height: 70px;
 	position: absolute;
-	left: 480px;
+	left: 460px;
 	top: 600px;
 }
 
@@ -759,7 +759,7 @@
 	width: 90px;
 	height: 70px;
 	position: absolute;
-	left: 580px;
+	left: 560px;
 	top: 600px;
 }
 
