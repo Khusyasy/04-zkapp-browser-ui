@@ -2,18 +2,18 @@
 
 html,
 body {
-	padding: 0;
-	margin: 0;
-	background-image: url(webpack:///mini-css-extract-plugin//04-zkapp-browser-ui/_next/static/media/bg.39af3e38.jpg);
-	font-family: 'VT323', monospace;
-	font-size: 36px;
-	background-size: cover;
-	width: 100%;
-	height: 100%;
-	left: 0px;
-	top: 0px;
-	position: absolute;
-	overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background-image: url(webpack:///mini-css-extract-plugin//04-zkapp-browser-ui/_next/static/media/bg.c49c4247.png);
+  font-family: 'VT323', monospace;
+  font-size: 36px;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  overflow: hidden;
 }
 
 a {
@@ -25,7 +25,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark ) {
+@media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -35,7 +35,6 @@ a {
 }
 
 @media (max-width: 480px) {
-
 }
 
 .Home_container__bCOhY {
