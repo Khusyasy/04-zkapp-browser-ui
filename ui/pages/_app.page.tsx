@@ -221,7 +221,9 @@ export default function App() {
         await zkappWorkerClient.compileContract();
         console.log('zkApp compiled');
 
-        const zkappPublicKey = PublicKey.fromBase58('B62qrDe16LotjQhPRMwG12xZ8Yf5ES8ehNzZ25toJV28tE9FmeGq23A');
+        const zkappPublicKey = PublicKey.fromBase58(
+          'B62qrDe16LotjQhPRMwG12xZ8Yf5ES8ehNzZ25toJV28tE9FmeGq23A'
+        );
 
         await zkappWorkerClient.initZkappInstance(zkappPublicKey);
 
@@ -516,83 +518,217 @@ export default function App() {
   }
 	
   return (
-	<div className={styles.container}>	
-	  <Head>
-        <title>zkApp [mbukhori]</title>
-        <meta name="description" content="ZkApp By mbukhori" />
-		<meta name="viewport" content="width=1024"/>
-        <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAEvklEQVRYhe2XW2wUZRTHf2d2drfb2gu10HZbYzA1kQfLRYyghEcgJNJYQZ+KJMYE30x8MkYSQ3zyyUBM5EVDeRBDwGJMiDFivGAhhCCmmCpUjZRipbW7FHZ3Lt/xYfYysxfw+qQnmezsfOc7//93zv878w38103+yiSdTHehVhqhHzzF2FdAr8qK6bl/jYBe6h/AZwR0CGUlKCjBVb4351EZAzMqD85e/kcI6NTyblxnD/AcEA+AtDioVQTK9y6GtxD2yspfZv8yAf2+bz1GjoL21AeuR6LkA6DXMTwpa379rBGGdRvwpzCcRLUnAKkAGB88T1ETXJ4XPAv7oApGu0A/0rOdO/4UAf02/Sg+B1GSQaBKUOMpWdmEs2wfmXwPmUIap3s/WWszxtcKeIVMEuSQnunY+IcI6NSybiw5imoyGkwxvuK6SnLpMM0925HUGiS1mube7SSXDmNKREOEMQqqCbAO67m7lt45A469B6PdlcnFtHuQlU2YvgMk2tcCkOrbTapvNwB2ywCLPEQ+r1WlKJPpMa79SjVcRIQ60T+AmIugNWr3PHB7D5Dq3lYvk2XLzRxFp56nOeFRFiagARlHbF0hD2emSv52lI7ZiWq8/h7XiOvCN88ixehiLyHV9wzxtkFSvcNk5j5Fbx5CpAxcipPA0RHg1VKcqhKYoQY1rFyliQtjtLvHaXeO07r4DjcndpXH4ks24vlaBI+WRJWhMGKZgE6muzAMVgsvUsuw1dTZhMac4FlIQ6GFrNJTbZ21JfDcfowVDU5jAqZtGxkJfMTuouWeUgYU59oRmiSUsaieBM/0A/NRAn6st7yKep2uikTHqrepMfX47cILpBY/QRLVnTH0a0gDF6IE1FdU6k8oB6owyM28X3axYs0k7l6PZbfSOvAiN86eImEuBVusbhYqgUIZkBkiaavKQqjEAIWLu2hpkpKwyJh76djwFXbLclIrXseZeIKk3eA9EZOrpTiVXeDmrjRoIDU7AIIGYluKbSnxmNKsP1KYGwcg2bkO1wnNM6GYRpVcbLqGgDxyYw5jzkcVS1nJWlxppWSVoGoU1xdiTelgyM8HPaLeIlTPyZbsfG0JANQaA7MqnDaNvl7LrqZjG1kp/pcUyft3EG97AID8tRMkYqWyRZuawFgYsqoTuqMY6yWURA1wVIMsWXuQeuYsfI373cukbOroSR2MHAr7RzqhrM1cRjmg1RowioVSmH6PW9PH8HNBCZ250zhzpwFwMxMsjD+NM76R1ths3Wamhjdlc/6HhgQA8Ny9qF6rFqQlSlv+Q6zJnRTmA9Dc1H5yU/sDAtlJWhY/oCXhImEhVzrgjOUUXquGs6sfyGOLs/pl67AiJ1GS4fRbosQtyP58GHwHzZ5BFW799C6F6WMkJZLu8NbLi6/D8jjXa/BqMlA0/bx9h2JGoXgqCgU1RjEGYkVA3wTkgnRGRYeSF8OIbHWO1MO5/aH0i7Z16ptjlA6lNFxhbdsNbmfE6LBsdccbYTQ8lALIhuy4CIOqui9QcMPmEhEsiqNG3xDXGbwd+B0zEDb9uOk+hBFFhlBd3eB74JwYM0bMHq1W+98mECFzgk5iiT6M9APg6RVizrRsYf4OU/+3GvsdPD5jAu/D1tEAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
-	  </Head>
-	  
-		<main className={styles.main}>
-		
-			<div id="homepage" className={styles.homepage}>
-				<span className={styles.homepageImg}> </span>
-				<a id="connectBtn" style={{display: 'block'}} onClick={() => {connectBtnclick(); connectWallet();}}>
-					<span className={styles.connectBtn}> </span>
-				</a>
-				
-					<span id="loadingBtn" style={{display: 'none'}} className={styles.loadingBtn}> </span>
-					<span id="loading" style={{display: 'none'}} className={styles.loading}> </span>
-					
-					<h1 id="status1" style={{display: 'none'}} className={styles.statusTxt}>Status : Sync & Checking Wallet ...</h1>
-					<h1 id="status2" style={{display: 'none'}} className={styles.statusTxt}>Status : Sync DONE! Connect to Wallet...</h1>
-					<h1 id="status3" style={{display: 'none'}} className={styles.statusTxt}>Status : Checking & Validation Address...</h1>
-					<h1 id="status4" style={{display: 'none'}} className={styles.statusTxt}>Status : Wallet Extension Not Found!</h1>
-					<h1 id="status5" style={{display: 'none'}} className={styles.statusTxt}>Status : Address Not Valid or No Balance!</h1>
-					<h1 id="status6" style={{display: 'none'}} className={styles.statusTxt}>Status : READY FOR TRANSACTION!!!</h1>
-					
-					<span id="caution" style={{display: 'none'}} className={styles.caution}> </span>
-					
-					<span id="succes" style={{display: 'none'}} className={styles.succes}> </span>
+    <div className={styles.container}>
+      <Head>
+        <title>zkApp [Khusyasy]</title>
+        <meta name="description" content="ZkApp By Khusyasy" />
+        <meta name="viewport" content="width=1024" />
+        <link
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAEvklEQVRYhe2XW2wUZRTHf2d2drfb2gu10HZbYzA1kQfLRYyghEcgJNJYQZ+KJMYE30x8MkYSQ3zyyUBM5EVDeRBDwGJMiDFivGAhhCCmmCpUjZRipbW7FHZ3Lt/xYfYysxfw+qQnmezsfOc7//93zv878w38103+yiSdTHehVhqhHzzF2FdAr8qK6bl/jYBe6h/AZwR0CGUlKCjBVb4351EZAzMqD85e/kcI6NTyblxnD/AcEA+AtDioVQTK9y6GtxD2yspfZv8yAf2+bz1GjoL21AeuR6LkA6DXMTwpa379rBGGdRvwpzCcRLUnAKkAGB88T1ETXJ4XPAv7oApGu0A/0rOdO/4UAf02/Sg+B1GSQaBKUOMpWdmEs2wfmXwPmUIap3s/WWszxtcKeIVMEuSQnunY+IcI6NSybiw5imoyGkwxvuK6SnLpMM0925HUGiS1mube7SSXDmNKREOEMQqqCbAO67m7lt45A469B6PdlcnFtHuQlU2YvgMk2tcCkOrbTapvNwB2ywCLPEQ+r1WlKJPpMa79SjVcRIQ60T+AmIugNWr3PHB7D5Dq3lYvk2XLzRxFp56nOeFRFiagARlHbF0hD2emSv52lI7ZiWq8/h7XiOvCN88ixehiLyHV9wzxtkFSvcNk5j5Fbx5CpAxcipPA0RHg1VKcqhKYoQY1rFyliQtjtLvHaXeO07r4DjcndpXH4ks24vlaBI+WRJWhMGKZgE6muzAMVgsvUsuw1dTZhMac4FlIQ6GFrNJTbZ21JfDcfowVDU5jAqZtGxkJfMTuouWeUgYU59oRmiSUsaieBM/0A/NRAn6st7yKep2uikTHqrepMfX47cILpBY/QRLVnTH0a0gDF6IE1FdU6k8oB6owyM28X3axYs0k7l6PZbfSOvAiN86eImEuBVusbhYqgUIZkBkiaavKQqjEAIWLu2hpkpKwyJh76djwFXbLclIrXseZeIKk3eA9EZOrpTiVXeDmrjRoIDU7AIIGYluKbSnxmNKsP1KYGwcg2bkO1wnNM6GYRpVcbLqGgDxyYw5jzkcVS1nJWlxppWSVoGoU1xdiTelgyM8HPaLeIlTPyZbsfG0JANQaA7MqnDaNvl7LrqZjG1kp/pcUyft3EG97AID8tRMkYqWyRZuawFgYsqoTuqMY6yWURA1wVIMsWXuQeuYsfI373cukbOroSR2MHAr7RzqhrM1cRjmg1RowioVSmH6PW9PH8HNBCZ250zhzpwFwMxMsjD+NM76R1ths3Wamhjdlc/6HhgQA8Ny9qF6rFqQlSlv+Q6zJnRTmA9Dc1H5yU/sDAtlJWhY/oCXhImEhVzrgjOUUXquGs6sfyGOLs/pl67AiJ1GS4fRbosQtyP58GHwHzZ5BFW799C6F6WMkJZLu8NbLi6/D8jjXa/BqMlA0/bx9h2JGoXgqCgU1RjEGYkVA3wTkgnRGRYeSF8OIbHWO1MO5/aH0i7Z16ptjlA6lNFxhbdsNbmfE6LBsdccbYTQ8lALIhuy4CIOqui9QcMPmEhEsiqNG3xDXGbwd+B0zEDb9uOk+hBFFhlBd3eB74JwYM0bMHq1W+98mECFzgk5iiT6M9APg6RVizrRsYf4OU/+3GvsdPD5jAu/D1tEAAAAASUVORK5CYII="
+          rel="icon"
+          type="image/x-icon"
+        />
+      </Head>
 
-					<h1 id="ftxt" style={{display: 'none'}} className={styles.faucetTxt}>Invalid Account or No Balance!! Please check and fund on this link </h1>
-					
-					<h1 id="walletTxt" style={{display: 'none'}} className={styles.walletTxt}>Could not find a wallet. Please Install Auro wallet and Re-Connect!! </h1>
-					
-					<a id="backNoAccount" style={{display: 'none'}} onClick={() => {backNoAccountClick(); }}>
-						<span className={styles.backNoAccount}> </span>
-					</a>
-					
-					<a id="backNoWallet" style={{display: 'none'}} onClick={() => {backNoWalletClick(); }}>
-						<span className={styles.backNoWallet}> </span>
-					</a>
-					
-					<span id="banner" style={{display: 'block'}} className={styles.banner}> </span>
-					<span id="banner2" style={{display: 'block'}} className={styles.banner2}> </span>
-					
-				{mainContent}
-				{accountDoesNotExist}
-				{hasWallet}
-				
-			<div id="footer" style={{display: 'block'}} >	
-				<span id="footerbg" style={{display: 'block'}} className={styles.footerbg}> </span>
-				<a style={{display: 'block'}} href="https://t.me/qoritele" target="_blank" rel="noopener noreferrer" >
-						<span className={styles.teleIcon}> </span>
-					</a>
-					
-				<a style={{display: 'block'}} href="https://discordapp.com/users/427110583079272479" target="_blank" rel="noopener noreferrer" >
-						<span className={styles.dcIcon}> </span>
-					</a>
-					
-				<a style={{display: 'block'}} href="https://github.com/mbukhori" target="_blank" rel="noopener noreferrer" >
-						<span className={styles.gitIcon}> </span>
-					</a>
-					
-				<a style={{display: 'block'}} href="https://web.facebook.com/muhammadbukhori" target="_blank" rel="noopener noreferrer" >
-						<span className={styles.fbIcon}> </span>
-					</a>
-					
-				<span id="blank" style={{visibility: 'hidden'}} className={styles.blank}> </span>
-			</div>
-					
-			</div>
-		</main>
-		
-	<footer className={styles.footer}>
-		</footer>
+      <main className={styles.main}>
+        <div id="homepage" className={styles.homepage}>
+          <span className={styles.homepageImg}> </span>
+          <a
+            id="connectBtn"
+            style={{ display: 'block' }}
+            onClick={() => {
+              connectBtnclick();
+              connectWallet();
+            }}
+          >
+            <span className={styles.connectBtn}> </span>
+          </a>
 
+          <span
+            id="loadingBtn"
+            style={{ display: 'none' }}
+            className={styles.loadingBtn}
+          >
+            {' '}
+          </span>
+          <span
+            id="loading"
+            style={{ display: 'none' }}
+            className={styles.loading}
+          >
+            {' '}
+          </span>
 
-	</div>
+          <h1
+            id="status1"
+            style={{ display: 'none' }}
+            className={styles.statusTxt}
+          >
+            Status : Sync & Checking Wallet ...
+          </h1>
+          <h1
+            id="status2"
+            style={{ display: 'none' }}
+            className={styles.statusTxt}
+          >
+            Status : Sync DONE! Connect to Wallet...
+          </h1>
+          <h1
+            id="status3"
+            style={{ display: 'none' }}
+            className={styles.statusTxt}
+          >
+            Status : Checking & Validation Address...
+          </h1>
+          <h1
+            id="status4"
+            style={{ display: 'none' }}
+            className={styles.statusTxt}
+          >
+            Status : Wallet Extension Not Found!
+          </h1>
+          <h1
+            id="status5"
+            style={{ display: 'none' }}
+            className={styles.statusTxt}
+          >
+            Status : Address Not Valid or No Balance!
+          </h1>
+          <h1
+            id="status6"
+            style={{ display: 'none' }}
+            className={styles.statusTxt}
+          >
+            Status : READY FOR TRANSACTION!!!
+          </h1>
+
+          <span
+            id="caution"
+            style={{ display: 'none' }}
+            className={styles.caution}
+          >
+            {' '}
+          </span>
+
+          <span
+            id="succes"
+            style={{ display: 'none' }}
+            className={styles.succes}
+          >
+            {' '}
+          </span>
+
+          <h1
+            id="ftxt"
+            style={{ display: 'none' }}
+            className={styles.faucetTxt}
+          >
+            Invalid Account or No Balance!! Please check and fund on this link{' '}
+          </h1>
+
+          <h1
+            id="walletTxt"
+            style={{ display: 'none' }}
+            className={styles.walletTxt}
+          >
+            Could not find a wallet. Please Install Auro wallet and Re-Connect!!{' '}
+          </h1>
+
+          <a
+            id="backNoAccount"
+            style={{ display: 'none' }}
+            onClick={() => {
+              backNoAccountClick();
+            }}
+          >
+            <span className={styles.backNoAccount}> </span>
+          </a>
+
+          <a
+            id="backNoWallet"
+            style={{ display: 'none' }}
+            onClick={() => {
+              backNoWalletClick();
+            }}
+          >
+            <span className={styles.backNoWallet}> </span>
+          </a>
+
+          <span
+            id="banner"
+            style={{ display: 'block' }}
+            className={styles.banner}
+          >
+            {' '}
+          </span>
+          <span
+            id="banner2"
+            style={{ display: 'block' }}
+            className={styles.banner2}
+          >
+            {' '}
+          </span>
+
+          {mainContent}
+          {accountDoesNotExist}
+          {hasWallet}
+
+          <div id="footer" style={{ display: 'block' }}>
+            <span
+              id="footerbg"
+              style={{ display: 'block' }}
+              className={styles.footerbg}
+            >
+              {' '}
+            </span>
+            <a
+              style={{ display: 'block' }}
+              href="https://t.me/khusyasy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={styles.teleIcon}> </span>
+            </a>
+
+            <a
+              style={{ display: 'block' }}
+              href="https://discordapp.com/users/324759269943803904"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={styles.dcIcon}> </span>
+            </a>
+
+            <a
+              style={{ display: 'block' }}
+              href="https://github.com/khusyasy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={styles.gitIcon}> </span>
+            </a>
+
+            <a
+              style={{ display: 'block' }}
+              href="https://web.facebook.com/Luthfi.Khusyasy/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={styles.fbIcon}> </span>
+            </a>
+
+            <span
+              id="blank"
+              style={{ visibility: 'hidden' }}
+              className={styles.blank}
+            >
+              {' '}
+            </span>
+          </div>
+        </div>
+      </main>
+
+      <footer className={styles.footer}></footer>
+    </div>
   );
 }

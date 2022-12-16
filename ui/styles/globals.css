@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 html,
 body {
 	padding: 0;
 	margin: 0;
 	background-image: url("../images/bg.png");
-
-	font-family: "Comic Sans MS";
-	font-size: 27px;
+	font-family: 'VT323', monospace;
+	font-size: 36px;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -31,6 +32,7 @@ a {
     color-scheme: dark;
   }
   body {
+    color-scheme: dark;
   }
 }
 

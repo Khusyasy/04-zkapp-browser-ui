@@ -10,8 +10,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  
 }
 
 .footer {
@@ -322,7 +320,7 @@
 	left: 300px;
 	top: 300px;
 	color: white;
-	font-size: 15px;
+	font-size: 0.55rem;
 	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
@@ -334,7 +332,7 @@
 	left: 340px;
 	top: 320px;
 	color: white;
-	font-size: 18px;
+	font-size: 0.60rem;
 	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
@@ -346,7 +344,7 @@
 	left: 390px;
 	top: 370px;
 	color: white;
-	font-size: 20px;
+	font-size: 0.75rem;
 	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -357,7 +355,7 @@
 	left: 210px;
 	top: 350px;
 	color: white;
-	font-size: 15px;
+	font-size: 0.55rem;
 	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -368,7 +366,7 @@
 	left: 215px;
 	top: 350px;
 	color: white;
-	font-size: 15px;
+	font-size: 0.55rem;
 	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -379,7 +377,7 @@
 	left: 390px;
 	top: 370px;
 	color: white;
-	font-size: 20px;
+	font-size: 0.75rem;
 	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -534,7 +532,7 @@
 	left: 330px;
 	top: 210px;
 	color: white;
-	font-size: 20px;
+	font-size: 0.70rem;
 	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
@@ -546,7 +544,7 @@
 	left: 360px;
 	top: 200px;
 	color: white;
-	font-size: 80px;
+	font-size: 2.5rem;
 	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
@@ -558,7 +556,7 @@
 	left: 285px;
 	top: 350px;
 	color: white;
-	font-size: 12px;
+	font-size: 0.50rem;
 	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
@@ -570,7 +568,7 @@
 	left: 220px;
 	top: 350px;
 	color: white;
-	font-size: 13px;
+	font-size: 0.50rem;
 	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
@@ -603,8 +601,8 @@
 	margin-left: auto;
 	margin-right: auto;
 	opacity: 0.5;
-	-webkit-transform: scale(1.5);
-    transform: scale(1.5); /* you can change the value also */
+	-webkit-transform: scale(2);
+    transform: scale(2); /* you can change the value also */
    -webkit-transform-origin: center;
     transform-origin: center;
 }
@@ -638,7 +636,7 @@
 	display: block;
 	display: flex;
 	background-image: url("../images/black.png");
-	background-size: repeat;
+	background-repeat: repeat;
 	width: 100%;
 	height: 100%;
 	left: 0px;
@@ -649,8 +647,8 @@
 	margin-left: auto;
 	margin-right: auto;
 	opacity: 0.5;
-	-webkit-transform: scale(1.5);
-    transform: scale(1.5); /* you can change the value also */
+	-webkit-transform: scale(5);
+    transform: scale(5); /* you can change the value also */
    -webkit-transform-origin: center;
     transform-origin: center;
 }
@@ -782,7 +780,6 @@
     background: #111;
   }
   .logo img {
+    background: #111;
   }
-   
-  
 }
