@@ -462,57 +462,153 @@ export default function App() {
   
   let mainContent;
   if (state.hasBeenSetup && state.accountExists) {	
-    mainContent =
-		<div>
-			<a id="sendBtn" style={{display: 'block'}} onClick={() => {onSendTransaction(); sendscreenShow(); }}>
-					<span className={styles.sendBtn}> </span>
-			</a>
-			
-			<a id="getBtn" style={{display: 'block'}} onClick={() => {onRefreshCurrentNum(); getscreenShow(); }}>
-					<span className={styles.getBtn}></span>
-			</a>
-			
-			<span id="getBtnDisable" style={{display: 'none'}} className={styles.getBtnDisable}></span>
-			<span id="sendBtnDisable" style={{display: 'none'}} className={styles.sendBtnDisable}></span>
-			
-			<h1 className={styles.txtAddrs}>{  state.publicKey!.toBase58() } </h1>
-			<h1 className={styles.addrs}>Address :</h1>
-			
-			<div id="getscreen" style={{display: 'none'}} className={styles.getscreen}>
-				<span className={styles.getscreenBlack}> </span>
-				<span className={styles.getscreenImg}> </span>
-				
-				<a id="closeGet" style={{display: 'block'}} onClick={() => {closeGetclick(); }}>
-					<span className={styles.closeGet}> </span>
-				</a>
-				
-				<span id="getLoading" style={{display: 'none'}} className={styles.getLoading}> </span>
-				
-				<h1 id="gettext" style={{display: 'none'}} className={styles.txtState}>Current Number in ZkApp :</h1>
-				<h1 id="getnumber" style={{display: 'none'}} className={styles.numState}>{ state.currentNum!.toString() } </h1>
-			</div>
-			
-			<div id="sendscreen" style={{display: 'none'}} className={styles.sendscreen}>
-				<span className={styles.sendscreenBlack}> </span>
-				<span className={styles.sendscreenImg}> </span>
-				
-				<a id="closeSend" style={{display: 'none'}} onClick={() => {closeSendclick(); }}>
-					<span className={styles.closeSend}> </span>
-				</a>
-				
-				<span id="sendLoading" style={{display: 'none'}} className={styles.sendLoading}> </span>
-				<span id="sendCheck" style={{display: 'none'}} className={styles.sendCheck}> </span>
-				<span id="sendDone" style={{display: 'none'}} className={styles.sendDone}> </span>
-				
-				<h1 id="send1" style={{display: 'none'}} className={styles.statusSendTxt}>Sending a Transaction...</h1>
-				<h1 id="send2" style={{display: 'none'}} className={styles.statusSendTxt}>Creating Proof...</h1>
-				<h1 id="send3" style={{display: 'none'}} className={styles.statusSendTxt}>Getting Transaction JSON...</h1>
-				<h1 id="send4" style={{display: 'none'}} className={styles.statusSendTxt}>Requesting Send Transaction...</h1>
+    mainContent = (
+      <div>
+        <a
+          id="sendBtn"
+          style={{ display: 'block' }}
+          onClick={() => {
+            onSendTransaction();
+            sendscreenShow();
+          }}
+        >
+          <span className={styles.sendBtn}> </span>
+        </a>
 
+        <a
+          id="getBtn"
+          style={{ display: 'block' }}
+          onClick={() => {
+            onRefreshCurrentNum();
+            getscreenShow();
+          }}
+        >
+          <span className={styles.getBtn}></span>
+        </a>
 
-			</div>
+        <span
+          id="getBtnDisable"
+          style={{ display: 'none' }}
+          className={styles.getBtnDisable}
+        ></span>
+        <span
+          id="sendBtnDisable"
+          style={{ display: 'none' }}
+          className={styles.sendBtnDisable}
+        ></span>
 
-		</div>
+        <h1 className={styles.txtAddrs}>{state.publicKey!.toBase58()} </h1>
+        <h1 className={styles.addrs}>Address :</h1>
+
+        <div
+          id="getscreen"
+          style={{ display: 'none' }}
+          className={styles.getscreen}
+        >
+          <span className={styles.getscreenBlack}> </span>
+          <span className={styles.getscreenImg}> </span>
+
+          <a
+            id="closeGet"
+            style={{ display: 'block' }}
+            onClick={() => {
+              closeGetclick();
+            }}
+          >
+            <span className={styles.closeGet}> </span>
+          </a>
+
+          <span
+            id="getLoading"
+            style={{ display: 'none' }}
+            className={styles.getLoading}
+          >
+            {' '}
+          </span>
+
+          <h1
+            id="gettext"
+            style={{ display: 'none' }}
+            className={styles.txtState}
+          >
+            Current Number in ZkApp :
+          </h1>
+          <h1
+            id="getnumber"
+            style={{ display: 'none' }}
+            className={styles.numState}
+          >
+            {state.currentNum!.toString()}{' '}
+          </h1>
+        </div>
+
+        <div
+          id="sendscreen"
+          style={{ display: 'none' }}
+          className={styles.sendscreen}
+        >
+          <span className={styles.sendscreenBlack}> </span>
+          <span className={styles.sendscreenImg}> </span>
+
+          <a
+            id="closeSend"
+            style={{ display: 'none' }}
+            onClick={() => {
+              closeSendclick();
+            }}
+          >
+            <span className={styles.closeSend}> </span>
+          </a>
+
+          <span
+            id="sendLoading"
+            style={{ display: 'none' }}
+            className={styles.sendLoading}
+          >
+            {' '}
+          </span>
+          <span id="sendCheck" style={{ display: 'none' }}>
+            {' '}
+          </span>
+          <span
+            id="sendDone"
+            style={{ display: 'none' }}
+            className={styles.sendDone}
+          >
+            {' '}
+          </span>
+
+          <h1
+            id="send1"
+            style={{ display: 'none' }}
+            className={styles.statusSendTxt}
+          >
+            Sending a Transaction...
+          </h1>
+          <h1
+            id="send2"
+            style={{ display: 'none' }}
+            className={styles.statusSendTxt}
+          >
+            Creating Proof...
+          </h1>
+          <h1
+            id="send3"
+            style={{ display: 'none' }}
+            className={styles.statusSendTxt}
+          >
+            Getting Transaction JSON...
+          </h1>
+          <h1
+            id="send4"
+            style={{ display: 'none' }}
+            className={styles.statusSendTxt}
+          >
+            Requesting Send Transaction...
+          </h1>
+        </div>
+      </div>
+    );
 	hideloadingBtn();
 	status6();
   }
